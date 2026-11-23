@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: Cambios subidos a rama ${{ github.ref_name }}
-          to: TUCORREO@gmail.com, CORREO_DE_OMAR@gmail.com
+          to: zayed.beltran@gmail.com, omar.mares@iteso.mx
           from: GitHub Actions <${{ secrets.MAIL_USERNAME }}>
           body: |
             Se subieron cambios a la rama ${{ github.ref_name }}.
