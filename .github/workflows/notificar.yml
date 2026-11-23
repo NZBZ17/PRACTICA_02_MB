@@ -1,9 +1,11 @@
-name: notificacion por correo
+name: Notificacion por correo
+
 on:
   push:
     branches: [main, feature_a, feature_b]
+
 jobs:
-  enviar_correo:
+  enviar-correo:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -17,11 +19,11 @@ jobs:
           secure: true
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
-          subject: Cambios a rama ${{ github.ref_name }}
-          to: zayed.beltran@gmail.com, correo del señor omar
-          from: Github actions <${{ secrets.MAIL_USERNAME }}>
-          body:
-            Se subieron cambios a la rama ${{ github.ref_name }}
+          subject: Cambios subidos a rama ${{ github.ref_name }}
+          to: TUCORREO@gmail.com, CORREO_DE_OMAR@gmail.com
+          from: GitHub Actions <${{ secrets.MAIL_USERNAME }}>
+          body: |
+            Se subieron cambios a la rama ${{ github.ref_name }}.
             Autor: ${{ github.actor }}
             Commit: ${{ github.event.head_commit.message }}
             Repo: ${{ github.repository }}
